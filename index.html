@@ -1,31 +1,69 @@
-<!doctype>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
         <title>Minnesota Wild Playoff Push</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
         <style>
-            body { padding: 50px 25px; }
-            #yeoface { margin-left: 11%; margin-bottom: -40px; }
+            /*
+             * # Colors
+             *
+             * #025736 - Green
+             * #BF2B37 - Red
+             * #EFB410 - Gold
+             * #EEE3C7 - Tan
+             */
+            body           { background-color: #025736; font-family: arial, helvetica, sans-serif; padding: 50px 25px; }
+            a,
+            a:hover        { color: #025736; }
+            .panel         { border-color: #BF2B37; text-align: center; }
+            .panel-heading { background-color: #BF2B37; color: #EEE3C7; font-weight: bolder; }
+            .panel-body    { background-color: #EEE3C7; }
+            .progress-bar  { background-color: #025736; }
+            #yeoface       { display: inline; margin-bottom: -40px; }
         </style>
     </head>
     <body>
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-sm-offset-3">
-                    <div class="panel panel-default">
+                    <div class="panel">
                         <div class="panel-heading">
                             <div class="panel-title">Playoff Push Information</div>
                         </div>
                         <div class="panel-body">
-                            <p><strong>Points Goal:</strong> 13/100</p>
-                            <p><strong>Points Needed:</strong> 87</p>
-                            <p><strong>Points Remaining:</strong> 146</p>
-                            <p><strong>Current Pace:</strong> 118 points</p>
-                            <p><em>Tracked since 10/8/15 vs. COL</em></p>
-                            <p><strong>Record since 10/8/15:</strong> 6-2-1</p>
+                            <div class="row">
+                                <div class="col-xs-6 text-right"><strong>Points Goal:</strong></div>
+                                <div class="col-xs-6 text-left" id="points-goal"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 text-right"><strong>Points Needed:</strong></div>
+                                <div class="col-xs-6 text-left" id="points-needed"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 text-right"><strong>Points Remaining:</strong></div>
+                                <div class="col-xs-6 text-left" id="points-remaining"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 text-right"><strong>Current Pace:</strong></div>
+                                <div class="col-xs-6 text-left" id="current-pace"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6 text-right"><strong>Record since 10/8/15:</strong></div>
+                                <div class="col-xs-6 text-left" id="record"></div>
+                            </div>
+                            <div class="text-left">
+                                <img src="yeoface-sub50.png" id="yeoface" alt="Mike Yeo's mug">
+                                <div class="progress progress-striped">
+                                    <div class="progress-bar" id="goal-progress"></div>
+                                </div>
+                            </div>
                             <p><strong>LGW!!</strong></p>
-                            <br>
-                            <p>
+                            <div><small class="text-muted"><em>Tracked since 10/8/15 vs. COL</em></small></div>
+                            <div>
                                 <small class="text-muted">
                                     Thanks
                                     <a href="https://www.reddit.com/user/SplurgingSpurgeon" target="_blank">/u/SplurgingSpurgeon</a>!
@@ -34,19 +72,43 @@
                                         Last post
                                     </a>
                                 </small>
-                            </p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <img src="inyeoface.png" id="yeoface">
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 13%"></div>
-                    </div>
-                </div>
+            <div class="text-center">
+                <img src="logo.png" alt="Minnesota Wild logo">
             </div>
         </div>
+        <script>
+            var record = [6, 2, 1];
+            var games = 82;
+            var pointsForWin = 2;
+            var pointsForOT = 1;
+
+            var played = record[0] + record[1] + record[2];
+            var points = (record[0] * pointsForWin) + (record[2] * pointsForOT);
+            var remaining = (games - played) * pointsForWin;
+            var pace = ((games - played) * pointsForWin) * (points/(played * pointsForWin));
+
+            document.getElementById('points-goal').innerHTML = points + '/100';
+            document.getElementById('points-needed').innerHTML = (100 - points) + '';
+            document.getElementById('points-remaining').innerHTML = remaining + '';
+            document.getElementById('current-pace').innerHTML = pace.toFixed() + '';
+            document.getElementById('record').innerHTML = record.join('-');
+
+            document.getElementById('goal-progress').style.width = points + '%';
+            var yeoface = document.getElementById('yeoface');
+            // to account for image width, make this 2% shorter than the progress bar
+            yeoface.style.marginLeft = (points - 2) + '%';
+            if (played > 41 && points < 50) {
+                yeoface.src = 'yeoface-stillsub50.png';
+            } else if (points >= 50 && points < 75) {
+                yeoface.src = 'yeoface-sub75.png';
+            } else if (points >= 100) {
+                yeoface.src = 'yeoface-100.png';
+            }
+        </script>
     </body>
 </html>
