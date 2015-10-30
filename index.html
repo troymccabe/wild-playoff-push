@@ -90,7 +90,8 @@
             var played = record[0] + record[1] + record[2];
             var points = (record[0] * pointsForWin) + (record[2] * pointsForOT);
             var remaining = (games - played) * pointsForWin;
-            var pace = ((games - played) * pointsForWin) * (points/(played * pointsForWin));
+            // total points * current gotten points pct
+            var pace = (games * pointsForWin) * (points / (played * pointsForWin));
 
             document.getElementById('points-goal').innerHTML = points + '/100';
             document.getElementById('points-needed').innerHTML = (100 - points) + '';
