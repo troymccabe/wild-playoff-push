@@ -67,10 +67,6 @@
                                 <small class="text-muted">
                                     Thanks
                                     <a href="https://www.reddit.com/user/SplurgingSpurgeon" target="_blank">/u/SplurgingSpurgeon</a>!
-                                    |
-                                    <a href="https://www.reddit.com/r/wildhockey/comments/3qibq3/post_game_thread_comeback_kids/cwfgb0s">
-                                        Last post
-                                    </a>
                                 </small>
                             </div>
                         </div>
@@ -82,13 +78,16 @@
             </div>
         </div>
         <script>
-            var record = [7, 2, 2];
+            var wins = 7;
+            var regulationLosses = 2;
+            var otLosses = 2;
+
             var games = 82;
             var pointsForWin = 2;
-            var pointsForOT = 1;
+            var pointsForOTLoss = 1;
 
-            var played = record[0] + record[1] + record[2];
-            var points = (record[0] * pointsForWin) + (record[2] * pointsForOT);
+            var played = wins + regulationLosses + otLosses;
+            var points = (wins * pointsForWin) + (otLosses * pointsForOTLoss);
             var remaining = (games - played) * pointsForWin;
             // total points * current gotten points pct
             var pace = (games * pointsForWin) * (points / (played * pointsForWin));
@@ -97,7 +96,7 @@
             document.getElementById('points-needed').innerHTML = (100 - points) + '';
             document.getElementById('points-remaining').innerHTML = remaining + '';
             document.getElementById('current-pace').innerHTML = pace.toFixed() + '';
-            document.getElementById('record').innerHTML = record.join('-');
+            document.getElementById('record').innerHTML = wins + '-' + regulationLosses + '-' + otLosses;
 
             document.getElementById('goal-progress').style.width = points + '%';
             var yeoface = document.getElementById('yeoface');
