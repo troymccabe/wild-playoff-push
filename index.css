@@ -48,15 +48,19 @@ a:hover {
     color: #025736;
 }
 
-.btn-default {
+.btn-default,
+.btn-default[disabled] {
     background-color: #025736;
     border-color: #004A29;
     color: #EEE3C7;
 }
 
 .btn-default:active,
+.btn-default:active[disabled],
 .btn-default:focus,
+.btn-default:focus[disabled],
 .btn-default:hover,
+.btn-default:hover[disabled],
 .open > .dropdown-toggle.btn-default {
     background-color: #003E1D;
     border-color: #001F00;
