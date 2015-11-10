@@ -1,0 +1,114 @@
+/* Sticky footer */
+html,
+body {
+    height: 100%;
+}
+
+#content-wrapper {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -50px;
+    padding: 50px 0 50px;
+}
+
+#footer-wrapper {
+    background-color: #BF2B37;
+    color: #EEE3C7;
+    height: 50px;
+    padding-top: 5px;
+}
+
+#footer-wrapper a {
+    color: #EEE3C7;
+}
+
+#footer-wrapper p {
+    margin-bottom: 0;
+}
+
+/*
+ * # Colors
+ *
+ * #025736 - Green
+ *  #004A29 +5%
+ *  #003E1D +10%
+ *  #001F00 +22%
+ *  #000000 +35%
+ * #BF2B37 - Red
+ * #EFB410 - Gold
+ * #EEE3C7 - Tan
+ */
+body {
+    background: #025736 url('logo.png') no-repeat center center;
+    font-family: arial, helvetica, sans-serif;
+}
+
+a,
+a:hover {
+    color: #025736;
+}
+
+.btn-default {
+    background-color: #025736;
+    border-color: #004A29;
+    color: #EEE3C7;
+}
+
+.btn-default:active,
+.btn-default:focus,
+.btn-default:hover,
+.open > .dropdown-toggle.btn-default {
+    background-color: #003E1D;
+    border-color: #001F00;
+    color: #EEE3C7;
+}
+
+.btn-default:active:focus,
+.btn-default:active:hover,
+.open > .dropdown-toggle.btn-default:active,
+.open > .dropdown-toggle.btn-default:focus,
+.open > .dropdown-toggle.btn-default:hover {
+    background-color: #003E1D;
+    border-color: #000F00;
+    color: #EEE3C7;
+}
+
+.dropdown-menu {
+    background-color: #EEE3C7;
+    opacity: .95;
+}
+
+.dropdown-menu > li > a:hover {
+    background-color: #025736;
+    color: #EEE3C7;
+    cursor: pointer;
+}
+
+.panel {
+    border-color: #BF2B37;
+    opacity: .98;
+    text-align: center;
+}
+
+.panel-heading {
+    background-color: #BF2B37;
+    color: #EEE3C7;
+    font-weight: bolder;
+}
+
+.panel-heading a:hover {
+    color: #EFB410;
+}
+
+.panel-body {
+    background-color: #EEE3C7;
+}
+
+.progress-bar {
+    background-color: #025736;
+}
+
+#yeoface {
+    display: inline;
+    margin-bottom: -40px;
+}

@@ -6,109 +6,112 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Minnesota Wild Playoff Push</title>
+
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['corechart']}]}"></script>
+        <script src="index.js"></script>
+
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-        <style>
-            /*
-             * # Colors
-             *
-             * #025736 - Green
-             * #BF2B37 - Red
-             * #EFB410 - Gold
-             * #EEE3C7 - Tan
-             */
-            body           { background-color: #025736; font-family: arial, helvetica, sans-serif; padding: 50px 25px; }
-            a,
-            a:hover        { color: #025736; }
-            .panel         { border-color: #BF2B37; text-align: center; }
-            .panel-heading { background-color: #BF2B37; color: #EEE3C7; font-weight: bolder; }
-            .panel-body    { background-color: #EEE3C7; }
-            .progress-bar  { background-color: #025736; }
-            #yeoface       { display: inline; margin-bottom: -40px; }
-        </style>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="index.css" rel="stylesheet">
     </head>
     <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <div class="panel">
-                        <div class="panel-heading">
-                            <div class="panel-title">Playoff Push Information</div>
-                        </div>
-                        <div class="panel-body">
-                            <div class="row">
-                                <div class="col-xs-6 text-right"><strong>Points Goal:</strong></div>
-                                <div class="col-xs-6 text-left" id="points-goal"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-6 text-right"><strong>Points Needed:</strong></div>
-                                <div class="col-xs-6 text-left" id="points-needed"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-6 text-right"><strong>Points Remaining:</strong></div>
-                                <div class="col-xs-6 text-left" id="points-remaining"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-6 text-right"><strong>Current Pace:</strong></div>
-                                <div class="col-xs-6 text-left" id="current-pace"></div>
-                            </div>
-                            <div class="row">
-                                <div class="col-xs-6 text-right"><strong>Record since 10/8/15:</strong></div>
-                                <div class="col-xs-6 text-left" id="record"></div>
-                            </div>
-                            <div class="text-left">
-                                <img src="yeoface-sub50.png" id="yeoface" alt="Mike Yeo's mug">
-                                <div class="progress progress-striped">
-                                    <div class="progress-bar" id="goal-progress"></div>
+        <div id="content-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <a href="https://www.reddit.com/user/splurgingspurgeon" target="_blank">/u/SplurgingSpurgeon</a>'s tracker
                                 </div>
                             </div>
-                            <p><strong>LGW!!</strong></p>
-                            <div><small class="text-muted"><em>Tracked since 10/8/15 vs. COL</em></small></div>
-                            <div>
-                                <small class="text-muted">
-                                    Thanks
-                                    <a href="https://www.reddit.com/user/SplurgingSpurgeon" target="_blank">/u/SplurgingSpurgeon</a>!
-                                </small>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-xs-6 text-right"><strong>Points Goal:</strong></div>
+                                    <div class="col-xs-6 text-left" id="points-goal"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 text-right"><strong>Points Needed:</strong></div>
+                                    <div class="col-xs-6 text-left" id="points-needed"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 text-right"><strong>Points Remaining:</strong></div>
+                                    <div class="col-xs-6 text-left" id="points-remaining"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 text-right"><strong>Current Pace:</strong></div>
+                                    <div class="col-xs-6 text-left" id="current-pace"></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 text-right"><strong>Record since 10/8/15:</strong></div>
+                                    <div class="col-xs-6 text-left" id="record"></div>
+                                </div>
+                                <div class="text-left">
+                                    <img src="yeoface-sub50.png" id="yeoface" alt="Mike Yeo's mug">
+                                    <div class="progress progress-striped">
+                                        <div class="progress-bar" id="goal-progress"></div>
+                                    </div>
+                                </div>
+                                <p><strong>LGW!!</strong></p>
+                                <div>
+                                    <small class="text-muted"><em>Tracked since 10/8/15 vs. COL</em></small>
+                                </div>
+                                <div>
+                                    <small class="text-muted">
+                                        Thanks <a href="https://www.reddit.com/user/SplurgingSpurgeon" target="_blank">/u/SplurgingSpurgeon</a>!
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <div class="panel-title">
+                                    <a href="https://www.reddit.com/user/wadamw" target="_blank">/u/wadamw</a>'s graphs
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div class="btn-group">
+                                    <button id="gameday-select-btn" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"></button>
+                                    <ul id="gameday-select-options" class="dropdown-menu"></ul>
+                                </div>
+                                <div id="chart"></div>
+                                <div class="btn-group">
+                                    <button id="previous-game-btn" type="button" class="btn btn-default">
+                                        <span class="fa fa-step-backward"></span>
+                                    </button>
+                                    <button id="play-season-btn" type="button" class="btn btn-default">
+                                        <span class="fa fa-play"></span>
+                                    </button>
+                                    <button id="next-game-btn" type="button" class="btn btn-default">
+                                        <span class="fa fa-step-forward"></span>
+                                    </button>
+                                </div>
+                                <div>
+                                    <small class="text-muted">
+                                        Thanks <a href="https://www.reddit.com/user/wadamw" target="_blank">/u/wadamw</a>!
+                                    </small>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="text-center">
-                <img src="logo.png" alt="Minnesota Wild logo">
+        </div>
+        <div id="footer-wrapper">
+            <div class="container">
+                <p class="text-center">
+                    Created by Troy McCabe
+                </p>
+                <p class="text-center">
+                    <a href="https://twitter.com/troymccabe" target="_blank" class="fa fa-twitter"></a>
+                    <a href="https://reddit.com/u/troymccabe" target="_blank" class="fa fa-reddit"></a>
+                    <a href="https://github.com/troymccabe" target="_blank" class="fa fa-github"></a>
+                </p>
             </div>
         </div>
-        <script>
-            var wins = 8;
-            var regulationLosses = 3;
-            var otLosses = 2;
-
-            var games = 82;
-            var pointsForWin = 2;
-            var pointsForOTLoss = 1;
-
-            var played = wins + regulationLosses + otLosses;
-            var points = (wins * pointsForWin) + (otLosses * pointsForOTLoss);
-            var remaining = (games - played) * pointsForWin;
-            // total points * current gotten points pct
-            var pace = (games * pointsForWin) * (points / (played * pointsForWin));
-
-            document.getElementById('points-goal').innerHTML = points + '/100';
-            document.getElementById('points-needed').innerHTML = (100 - points) + '';
-            document.getElementById('points-remaining').innerHTML = remaining + '';
-            document.getElementById('current-pace').innerHTML = pace.toFixed() + '';
-            document.getElementById('record').innerHTML = wins + '-' + regulationLosses + '-' + otLosses;
-
-            document.getElementById('goal-progress').style.width = points + '%';
-            var yeoface = document.getElementById('yeoface');
-            // to account for image width, make this 2% shorter than the progress bar
-            yeoface.style.marginLeft = (points - 2) + '%';
-            if (played > 41 && points < 50) {
-                yeoface.src = 'yeoface-stillsub50.png';
-            } else if (points >= 50 && points < 75) {
-                yeoface.src = 'yeoface-sub75.png';
-            } else if (points >= 100) {
-                yeoface.src = 'yeoface-100.png';
-            }
-        </script>
     </body>
 </html>
