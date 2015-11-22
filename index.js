@@ -106,7 +106,7 @@ var gamesDesc = [
     //{date: '2015-11-28', points: pointsForWin},
     //{date: '2015-11-27', points: pointsForWin},
     //{date: '2015-11-25', points: pointsForWin},
-    //{date: '2015-11-21', points: pointsForWin},
+    {date: '2015-11-21', points: pointsForWin},
     {date: '2015-11-19', points: pointsForLoss},
     {date: '2015-11-17', points: pointsForLoss},
     {date: '2015-11-14', points: pointsForOTLoss},
