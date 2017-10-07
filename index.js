@@ -140,13 +140,13 @@ $(function() {
     $('#goal-progress').css('width', points + '%');
     var $boudreauface = $('#boudreauface');
     // to account for image width, make this 2% shorter than the progress bar
-    $yeoface.css('margin-left', (points - 2) + '%');
+    $boudreauface.css('margin-left', (points - 2) + '%');
     if (played > 41 && points < 50) {
-        $yeoface.src = 'boudreauface-stillsub50.png';
+        $boudreauface.src = 'boudreauface-stillsub50.png';
     } else if (points >= 50 && points < 75) {
-        $yeoface.src = 'boudreauface-sub75.png';
+        $boudreauface.src = 'boudreauface-sub75.png';
     } else if (points >= 100) {
-        $yeoface.src = 'boudreauface-100.png';
+        $boudreauface.src = 'boudreauface-100.png';
     }
 });
 /*
