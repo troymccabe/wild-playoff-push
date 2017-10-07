@@ -43,88 +43,7 @@ var totalPoints = totalGames * pointsForWin;
 // games played in descending order (ascending copy created below)
 // original is descending since we can just uncomment a line and not worry about dangling commas
 var gamesDesc = [
-    //{date: '2016-04-09', points: pointsForWin},
-    //{date: '2016-04-05', points: pointsForWin},
-    //{date: '2016-04-03', points: pointsForWin},
-    //{date: '2016-04-01', points: pointsForWin},
-    //{date: '2016-03-31', points: pointsForWin},
-    //{date: '2016-03-29', points: pointsForWin},
-    //{date: '2016-03-26', points: pointsForWin},
-    //{date: '2016-03-24', points: pointsForWin},
-    //{date: '2016-03-22', points: pointsForWin},
-    //{date: '2016-03-20', points: pointsForWin},
-    //{date: '2016-03-19', points: pointsForWin},
-    //{date: '2016-03-17', points: pointsForWin},
-    //{date: '2016-03-15', points: pointsForWin},
-    //{date: '2016-03-12', points: pointsForWin},
-    //{date: '2016-03-10', points: pointsForWin},
-    //{date: '2016-03-06', points: pointsForWin},
-    //{date: '2016-03-05', points: pointsForWin},
-    //{date: '2016-03-03', points: pointsForWin},
-    //{date: '2016-03-01', points: pointsForWin},
-    //{date: '2016-02-28', points: pointsForWin},
-    //{date: '2016-02-26', points: pointsForWin},
-    //{date: '2016-02-25', points: pointsForWin},
-    //{date: '2016-02-23', points: pointsForWin},
-    //{date: '2016-02-21', points: pointsForWin},
-    //{date: '2016-02-18', points: pointsForWin},
-    //{date: '2016-02-17', points: pointsForWin},
-    //{date: '2016-02-15', points: pointsForWin},
-    //{date: '2016-02-13', points: pointsForWin},
-    //{date: '2016-02-11', points: pointsForWin},
-    //{date: '2016-02-09', points: pointsForWin},
-    //{date: '2016-02-06', points: pointsForWin},
-    //{date: '2016-02-04', points: pointsForWin},
-    //{date: '2016-02-02', points: pointsForWin},
-    //{date: '2016-01-25', points: pointsForWin},
-    //{date: '2016-01-23', points: pointsForWin},
-    //{date: '2016-01-21', points: pointsForWin},
-    //{date: '2016-01-20', points: pointsForWin},
-    //{date: '2016-01-16', points: pointsForWin},
-    //{date: '2016-01-15', points: pointsForWin},
-    //{date: '2016-01-12', points: pointsForWin},
-    //{date: '2016-01-10', points: pointsForWin},
-    //{date: '2016-01-09', points: pointsForWin},
-    //{date: '2016-01-07', points: pointsForWin},
-    //{date: '2016-01-05', points: pointsForWin},
-    //{date: '2016-01-03', points: pointsForWin},
-    //{date: '2016-01-02', points: pointsForWin},
-    //{date: '2015-12-31', points: pointsForWin},
-    //{date: '2015-12-28', points: pointsForWin},
-    //{date: '2015-12-26', points: pointsForWin},
-    //{date: '2015-12-22', points: pointsForWin},
-    //{date: '2015-12-21', points: pointsForWin},
-    //{date: '2015-12-19', points: pointsForWin},
-    {date: '2015-12-17', points: pointsForWin},
-    {date: '2015-12-15', points: pointsForWin},
-    {date: '2015-12-12', points: pointsForWin},
-    {date: '2015-12-11', points: pointsForOTLoss},
-    {date: '2015-12-07', points: pointsForOTLoss},
-    {date: '2015-12-05', points: pointsForWin},
-    {date: '2015-12-03', points: pointsForWin},
-    {date: '2015-12-01', points: pointsForWin},
-    {date: '2015-11-28', points: pointsForOTLoss},
-    {date: '2015-11-27', points: pointsForLoss},
-    {date: '2015-11-25', points: pointsForLoss},
-    {date: '2015-11-21', points: pointsForWin},
-    {date: '2015-11-19', points: pointsForLoss},
-    {date: '2015-11-17', points: pointsForLoss},
-    {date: '2015-11-14', points: pointsForOTLoss},
-    {date: '2015-11-12', points: pointsForWin},
-    {date: '2015-11-10', points: pointsForWin},
-    {date: '2015-11-07', points: pointsForWin},
-    {date: '2015-11-05', points: pointsForLoss},
-    {date: '2015-10-31', points: pointsForOTLoss},
-    {date: '2015-10-30', points: pointsForWin},
-    {date: '2015-10-27', points: pointsForWin},
-    {date: '2015-10-25', points: pointsForLoss},
-    {date: '2015-10-24', points: pointsForWin},
-    {date: '2015-10-22', points: pointsForWin},
-    {date: '2015-10-18', points: pointsForLoss},
-    {date: '2015-10-16', points: pointsForOTLoss},
-    {date: '2015-10-15', points: pointsForWin},
-    {date: '2015-10-10', points: pointsForWin},
-    {date: '2015-10-08', points: pointsForWin}
+    {date: '2017-10-05', points: pointsForLoss}
 ];
 var gamesAsc = [];
 for (var i = gamesDesc.length - 1; i >= 0; i--){
@@ -219,15 +138,15 @@ $(function() {
 // set progress bar width
 $(function() {
     $('#goal-progress').css('width', points + '%');
-    var $yeoface = $('#yeoface');
+    var $boudreauface = $('#boudreauface');
     // to account for image width, make this 2% shorter than the progress bar
     $yeoface.css('margin-left', (points - 2) + '%');
     if (played > 41 && points < 50) {
-        $yeoface.src = 'yeoface-stillsub50.png';
+        $yeoface.src = 'boudreauface-stillsub50.png';
     } else if (points >= 50 && points < 75) {
-        $yeoface.src = 'yeoface-sub75.png';
+        $yeoface.src = 'boudreauface-sub75.png';
     } else if (points >= 100) {
-        $yeoface.src = 'yeoface-100.png';
+        $yeoface.src = 'boudreauface-100.png';
     }
 });
 /*
