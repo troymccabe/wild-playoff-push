@@ -43,6 +43,7 @@ var totalPoints = totalGames * pointsForWin;
 // games played in descending order (ascending copy created below)
 // original is descending since we can just uncomment a line and not worry about dangling commas
 var gamesDesc = [
+    {date: '2017-10-07', points: pointsForOTLoss},
     {date: '2017-10-05', points: pointsForLoss}
 ];
 var gamesAsc = [];
